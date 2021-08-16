@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="log.pattern"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread]  %logger - [%method:%line] - %msg%n" />
+	<property name="log.pattern.console"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %green([%thread])  %cyan(%class{20}) - [%method:%line] - %msg%n" />
+
+
+	<!-- 控制台输出 -->
+	<appender name="console"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${log.pattern.console}</pattern>
+		</encoder>
+	</appender>
+	<root level="info">
+		<appender-ref ref="console" />
+	</root>
+	
+	<logger name="org.farukon" level="debug"/>
+
+
+</configuration>
